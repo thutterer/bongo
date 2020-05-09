@@ -1,0 +1,28 @@
+<%= form_with(model: article, local: true) do |form| %>
+  <% if article.errors.any? %>
+    <header>
+      <h4><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h4>
+
+      <ul>
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </header>
+  <% end %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title, required: true %>
+
+  <%= form.label :text %>
+  <%= form.text_area :text, required: true %>
+
+  <%= form.label :publish_at %>
+  <%= form.date_field :publish_at %>
+
+  <button type="submit">Save</button>
+
+  <%= link_to articles_path do %>
+    <em>Back</em>
+  <% end %>
+<% end %>
