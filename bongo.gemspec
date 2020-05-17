@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = Bongo::VERSION
   spec.authors     = ["Thomas Hutterer"]
   spec.email       = ["tohu@tuta.io"]
-  spec.homepage    = "https://rubygems.org/gems/bongo"
-  spec.summary     = "A blogging engine"
-  spec.description = "Bongo is a mountable Rails engine for blogging using MongoDB."
+  spec.homepage    = "https://github.com/thutterer/bongo"
+  spec.summary     = "A blogging engine for Rails"
+  spec.description = "Rails engine for blogging using MongoDB."
   spec.license     = "MIT"
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
