@@ -1,8 +1,5 @@
 # Bongo
-Short description and motivation.
-
-## Usage
-How to use my plugin.
+Rails engine for blogging using MongoDB.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -20,9 +17,6 @@ Or install it yourself as:
 ```bash
 $ gem install bongo
 ```
-
-## Contributing
-Contribution directions go here.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
