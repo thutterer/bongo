@@ -15,7 +15,8 @@
   <%= form.text_field :title, required: true %>
 
   <%= form.label :text %>
-  <%= form.text_area :text, required: true %>
+  <%= form.hidden_field :text %>
+  <trix-editor input="article_text" class="trix-content" required></trix-editor>
 
   <%= form.label :publish_at %>
   <%= form.date_field :publish_at %>

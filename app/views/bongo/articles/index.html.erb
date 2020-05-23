@@ -2,7 +2,7 @@
   <article>
     <h2><%= link_to article.title, article %></h2>
     <small><%= article.publish_at ? l(article.publish_at, format: :long) : "Unpublished draft"%></small>
-    <p><%= simple_format truncate(article.text, length: 500) %></p>
+    <p><%= simple_format article.text %></p>
   </article>
   <br>
 <% end %>

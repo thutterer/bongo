@@ -1,8 +1,8 @@
 # Bongo
-Rails engine for blogging using MongoDB.
+Rails engine for blogging using Trix and MongoDB.
 
 ## Installation
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
 ```ruby
 gem 'bongo'
@@ -13,9 +13,14 @@ And then execute:
 $ bundle
 ```
 
-Or install it yourself as:
-```bash
-$ gem install bongo
+Add its assets to your `application.scss` and `application.js`:
+```javascript
+//= require "bongo/application"
+```
+
+Mount the engine in your `routes.rb`:
+```ruby
+mount Bongo::Engine, at: "/blog"
 ```
 
 ## License
