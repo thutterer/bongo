@@ -3,7 +3,9 @@
     <h2><%= @article.title %></h2>
     <small><%= @article.publish_at ? l(@article.publish_at, format: :long) : "Unpublished draft"%></small>
   </header>
-  <main><%= simple_format @article.text %></main>
+  <main class="trix-content">
+    <%= @article.text.html_safe %>
+  </main>
 </article>
 
 <br>
