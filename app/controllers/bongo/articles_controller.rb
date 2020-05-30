@@ -7,21 +7,25 @@ module Bongo
     before_action :set_article, only: [:show, :edit, :update, :destroy]
 
     def index
-      @articles = Article.all.order(publish_at: :desc)
+      @articles = policy_scope(Article).order(publish_at: :desc)
     end
 
     def show
+      authorize @article
     end
 
     def new
       @article = Article.new
+      authorize @article
     end
 
     def edit
+      authorize @article
     end
 
     def create
       @article = Article.new(article_params)
+      authorize @article
 
       if @article.save
         redirect_to @article, notice: 'Article was successfully created.'
@@ -31,6 +35,8 @@ module Bongo
     end
 
     def update
+      authorize @article
+
       if @article.update(article_params)
         redirect_to @article, notice: 'Article was successfully updated.'
       else
@@ -39,6 +45,7 @@ module Bongo
     end
 
     def destroy
+      authorize @article
       @article.destroy
       redirect_to articles_url, notice: 'Article was successfully destroyed.'
     end

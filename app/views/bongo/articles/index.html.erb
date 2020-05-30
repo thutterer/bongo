@@ -13,6 +13,8 @@
 
 <br>
 
-<%= link_to new_article_path do %>
-  <b>New Article</b>
+<% if policy(Bongo::Article).create? %>
+  <%= link_to new_article_path do %>
+    <b>New Article</b>
+  <% end %>
 <% end %>
