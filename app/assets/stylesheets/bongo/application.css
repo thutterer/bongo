@@ -2,9 +2,3 @@
  *= require_tree .
  *= require_self
  */
-
-
-.trix-content a {
-  /* https://github.com/basecamp/trix/issues/142 */
-  font-weight: normal;
-}

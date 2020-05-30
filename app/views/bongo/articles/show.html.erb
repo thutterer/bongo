@@ -9,12 +9,16 @@
   </div>
 
   <footer>
-    <%= link_to edit_article_path(@article) do %>
-      <b>Edit</b>
+    <% if policy(@article).update? %>
+      <%= link_to edit_article_path(@article) do %>
+        <b>Edit</b>
+      <% end %>
     <% end %>
 
-    <%= link_to @article, method: :delete, data: {confirm: "Are you sure?"} do %>
-      <em>Delete</em>
+    <% if policy(@article).destroy? %>
+      <%= link_to @article, method: :delete, data: {confirm: "Are you sure?"} do %>
+        <em>Delete</em>
+      <% end %>
     <% end %>
 
     <br>
