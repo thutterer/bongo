@@ -8,6 +8,13 @@ module Bongo
 
     def index
       @articles = policy_scope(Article).order(publish_at: :desc)
+      respond_to do |format|
+        format.html
+        format.rss do
+          @articles = @articles.published.order(publish_at: :desc)
+          render layout: false
+        end
+      end
     end
 
     def show
