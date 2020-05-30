@@ -3,21 +3,21 @@
     <h2><%= @article.title %></h2>
     <small><%= @article.publish_at ? l(@article.publish_at, format: :long) : "Unpublished draft"%></small>
   </header>
-  <main class="trix-content">
+
+  <div class="trix-content">
     <%= @article.text.html_safe %>
-  </main>
+  </div>
+
+  <footer>
+    <%= link_to edit_article_path(@article) do %>
+      <b>Edit</b>
+    <% end %>
+
+    <%= link_to @article, method: :delete, data: {confirm: "Are you sure?"} do %>
+      <em>Delete</em>
+    <% end %>
+
+    <br>
+    <%= link_to 'Back', articles_path %>
+  </footer>
 </article>
-
-<br>
-
-<%= link_to edit_article_path(@article) do %>
-  <b>Edit</b>
-<% end %>
-
-<%= link_to @article, method: :delete, data: {confirm: "Are you sure?"} do %>
-  <em>Delete</em>
-<% end %>
-
-<%= link_to articles_path do %>
-  <em>Back</em>
-<% end %>
