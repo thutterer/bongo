@@ -1,0 +1,9 @@
+<article>
+  <header>
+    <h2><%= link_to article.title, article %></h2>
+    <small><%= article.publish_at ? l(article.publish_at, format: :long) : "Unpublished draft"%></small>
+  </header>
+  <div class="trix-content">
+    <%= article.text.html_safe %>
+  </div>
+</article>

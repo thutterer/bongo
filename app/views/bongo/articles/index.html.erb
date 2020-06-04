@@ -1,20 +1,10 @@
-<% @articles.each do |article| %>
-  <article>
-    <header>
-      <h2><%= link_to article.title, article %></h2>
-      <small><%= article.publish_at ? l(article.publish_at, format: :long) : "Unpublished draft"%></small>
-    </header>
-    <div class="trix-content">
-      <%= article.text.html_safe %>
-    </div>
-  </article>
-  <br>
-<% end %>
-
-<br>
-
-<% if policy(Bongo::Article).create? %>
-  <%= link_to new_article_path do %>
-    <b>New Article</b>
+<header>
+  <% if policy(Bongo::Article).create? %>
+    <%= link_to new_article_path do %>
+      <b>New Article</b>
+    <% end %>
+    <hr>
   <% end %>
-<% end %>
+</header>
+
+<%= render(collection: @articles, partial: 'article', spacer_template: "hr", cached: true) || "There are no articles yet." %>

@@ -1,27 +1,19 @@
-<article>
-  <header>
-    <h2><%= @article.title %></h2>
-    <small><%= @article.publish_at ? l(@article.publish_at, format: :long) : "Unpublished draft"%></small>
-  </header>
+<%= render @article %>
 
-  <div class="trix-content">
-    <%= @article.text.html_safe %>
-  </div>
-
-  <footer>
-    <% if policy(@article).update? %>
-      <%= link_to edit_article_path(@article) do %>
-        <b>Edit</b>
-      <% end %>
+<footer>
+  <% if policy(@article).update? %>
+    <%= link_to edit_article_path(@article) do %>
+      <b>Edit</b>
     <% end %>
+  <% end %>
 
-    <% if policy(@article).destroy? %>
-      <%= link_to @article, method: :delete, data: {confirm: "Are you sure?"} do %>
-        <em>Delete</em>
-      <% end %>
+  <% if policy(@article).destroy? %>
+    <%= link_to @article, method: :delete, data: {confirm: "Are you sure?"} do %>
+      <em>Delete</em>
     <% end %>
+  <% end %>
 
-    <br>
-    <%= link_to 'Back', articles_path %>
-  </footer>
-</article>
+  <%= link_to articles_path  do %>
+    <i>Back</i>
+  <% end %>
+</footer>
