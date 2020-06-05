@@ -1,3 +1,4 @@
+require "mongoid_slug"
 require "bongo/engine"
 
 module Bongo

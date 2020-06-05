@@ -1,6 +1,10 @@
 module Bongo
   class Article
     include Mongoid::Document
+    include Mongoid::Timestamps::Updated
+    include Mongoid::Slug
+
+    slug :title, history: true
 
     field :title, type: String
     field :text, type: String

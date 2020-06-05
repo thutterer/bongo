@@ -5,7 +5,7 @@ Rails engine for blogging using Trix and MongoDB.
 Add this line to your application's `Gemfile`:
 
 ```ruby
-gem 'bongo'
+gem "bongo"
 ```
 
 And then execute:

@@ -7,7 +7,7 @@ module Bongo
     before_action :set_article, only: [:show, :edit, :update, :destroy]
 
     def index
-      @articles = policy_scope(Article).order(publish_at: :desc)
+      @articles = policy_scope(Article).published.order(publish_at: :desc)
       respond_to do |format|
         format.html
         format.rss do

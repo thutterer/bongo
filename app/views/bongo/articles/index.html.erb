@@ -1,9 +1,8 @@
 <header>
   <% if policy(Bongo::Article).create? %>
-    <%= link_to new_article_path do %>
-      <b>New Article</b>
+    <%= link_to drafts_url do %>
+      <i>Drafts</i>
     <% end %>
-    <hr>
   <% end %>
 </header>
 

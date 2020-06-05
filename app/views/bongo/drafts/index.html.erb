@@ -1,0 +1,16 @@
+<header>
+  <% if policy(Bongo::Article).create? %>
+    <%= link_to new_article_path do %>
+      <b>New Article</b>
+    <% end %>
+  <% end %>
+</header>
+
+<ul>
+  <% @drafts.each do |draft| %>
+    <li>
+      <%= link_to draft.title, draft %><br>
+      <small>last modified <%= distance_of_time_in_words_to_now(draft.updated_at) %> ago</small>
+    </li>
+  <% end %>
+</ul>

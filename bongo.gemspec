@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "rails", "~> 6.0.3"
   spec.add_runtime_dependency "mongoid", "~> 7.0.5"
+  spec.add_runtime_dependency "mongoid-slug", ">= 6"
   spec.add_runtime_dependency "aws-sdk-s3", "~> 1"
   spec.add_runtime_dependency "pundit", "~> 2.1"
 end
